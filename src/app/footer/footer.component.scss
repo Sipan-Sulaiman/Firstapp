@@ -1,0 +1,251 @@
+@keyframes pop-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pop-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@mixin circle($size) {
+  display: inline-block;
+  border-radius: 50%;
+  @if $size == small {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+    line-height: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  } @else if $size == tiny {
+    width: 35px;
+    height: 35px;
+    font-size: 23px;
+    line-height: 35px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+
+.speed-dial {
+  text-align: center;
+  display: inline-block;
+  padding-top:75px;
+  padding-bottom:50px;
+ width: 33%;
+
+  a,
+  a:hover,
+  a:active,
+  a:visited,
+  a:focus {
+    color: black;;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .toggle {
+    @include circle(small);
+    margin: 8px 0;
+    
+  }
+  &:hover .dials a {
+    animation: pop-in 0.3s ease both;
+  }
+  .dials {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+   
+    a {
+      @include circle(tiny);
+      margin: 8px 0;
+      transform: scale(0);
+      animation: pop-out 0.3s ease both;
+    }
+    a.pop-in {
+      animation: pop-in 0.3s ease both;
+    }
+
+    @for $i from 0 through 6 {
+      li:nth-child(#{$i}) a {
+        animation-delay: $i * 0.1s;
+      }
+    }
+  }
+}
+
+.bg-share {
+  background-color: #94c21f;
+}
+.bg-twitter {
+  background-color: #94c21f;
+}
+.bg-facebook {
+  background-color: #94c21f;
+}
+.bg-youtube {
+  background-color: #94c21f;
+}
+
+
+
+.logoo{width: 50%;
+  }
+  
+  .photo{display: flex;
+  flex-direction: column;
+}
+
+
+
+  .cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-image: linear-gradient(rgb(255, 255, 255), #94c21f);
+    align-items: center;
+   
+  }
+  
+
+
+
+
+  
+.cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+  padding-bottom: 200px;
+}
+
+$color-primary-white: rgb(240, 240, 240);
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  font-family: "Roboto", sans-serif;
+}
+
+.card {
+  width: 24rem;
+  height: 36rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: $color-primary-white;
+  box-shadow: 0 10px 20px 20px rgba(255, 255, 255, 0.2);
+  
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity 0.2s ease-out;
+    
+    
+    
+  }
+
+  h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset 0.3s 0.3s ease-out;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 30px;
+  }
+
+  p,
+  a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity 0.3s ease-out;
+    text-shadow: 0 0 20px black;
+  }
+
+  p {
+    inset: auto auto 80px 30px;
+    font-size: 18px;
+  }
+
+  a {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:hover h2 {
+    inset: auto auto 300px 30px;
+    transition: inset 0.3s ease-out;
+    color: black;
+  }
+
+  &:hover p,
+  &:hover a {
+    opacity: 1;
+    transition: opacity 0.5s 0.1s ease-in;
+    text-shadow: 0 0 px black;
+    color: black;
+  }
+
+  &:hover img {
+    transition: opacity 0.3s ease-in;
+    opacity: 0.3;
+    
+  }
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+
+h1 {
+  font-size: 50px;
+  color: #94c21f;
+  text-align: center;
+  padding-top: 100px;
+ 
+  
+ 
+}
+
+h2{text-shadow: 0 0 5px black;}
+h3{font-size: 30px;
+  text-shadow: 0 0 10px black;}
+
+
+.link a{font-size: 17px;
+text-decoration: none;
+color: black;
+;
+}
+
+
+.info{padding-right: 100px;}
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(207, 207, 207);
+  width: 100%;
+}
+h1 {
+  font-size: 40px;
+
+  color: #000000;
+  padding-top: 70px;
+  font-family: sans-serif;
+  text-align: center;
+
+  background-color: rgb(207, 207, 207);
+  width: 100%;
+}
+
+.projekt {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: rgb(207, 207, 207);
+  width: 100%;
+  margin-top: 75px;
+  padding-bottom: 80px;
+}
+
+img {
+  width: 20%;
+  height: 100%;
+  box-shadow: 0  0 20px black
+}
+
+p {
+  text-align: center;
+  padding-right: 200px;
+  padding-left: 200px;
+  font-size: 18px;
+  padding-top: 30px;
+}
+h2{text-align: center;
+padding-top: 20px;}
